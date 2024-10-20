@@ -10,7 +10,7 @@
   <body>
     <a-scene>
         <a-assets>
-            <img id="sky" src="sky.png">
+            <img id="sky" src="sky.jpg">
           </a-assets>
           <a-sky src="#sky"></a-sky>
             <!-- Autoplaying background music -->
@@ -29,13 +29,12 @@
            color="#fff" 
              position="0 1.5 -3" 
              depth="0.2" height="0.2" width="1" 
-          
              class="clickable">
+             <a-text id="BtnClick" value="Press" color="#fff"  position="-0.6 0 0.2"></a-text>
       </a-box>
       <a-box color="#fff"  material="src: url(btn.jpg)"  position="0 2 -3"  depth="0.2" height="0.5" width="1.5"  >
       <!-- Text that shows the animation type -->
-      <a-text id="animationText" value="Look" color="#fff"  position="-0.6 0 0.2"
-             ></a-text>
+      <a-text id="animationText" value="Look" color="#fff"  position="-0.6 0 0.2"></a-text>
       </a-box> 
       <!-- Gaze Cursor -->
       <a-entity camera look-controls>
