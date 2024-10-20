@@ -13,25 +13,30 @@
             <img id="sky" src="sky.png">
           </a-assets>
           <a-sky src="#sky"></a-sky>
+            <!-- Autoplaying background music -->
+      <a-entity sound="src: url(music.mp3); autoplay: true; loop: true; volume: 0.5"></a-entity>
       <!-- Bouncing ball -->
       <a-entity id="ball" geometry="primitive: sphere; radius: 0.5" 
-                material="color: red" 
+                material="src: url(ball.jpg)" 
+                color="#fff" 
                 position="-2 -1 -3"
                 animation="property: position; to: -2 2 -3; dir: alternate; loop: true; dur: 1000; easing: easeInOutSine">
       </a-entity>
 
       <!-- Button that triggers the random animation text -->
       <a-box id="button" 
+           material="src: url(btn.jpg)" 
+           color="#fff" 
              position="0 1.5 -3" 
              depth="0.2" height="0.2" width="1" 
-             color="#4CC3D9"
+          
              class="clickable">
       </a-box>
-
+      <a-box color="#fff"  material="src: url(btn.jpg)"  position="0 2 -3"  depth="0.2" height="0.5" width="1.5"  >
       <!-- Text that shows the animation type -->
-      <a-text id="animationText" value="Look at the button" color="#fff" 
-              position="-1 2 -3"></a-text>
-
+      <a-text id="animationText" value="Look" color="#fff"  position="-0.6 0 0.2"
+             ></a-text>
+      </a-box> 
       <!-- Gaze Cursor -->
       <a-entity camera look-controls>
         <a-cursor fuse="true" fuse-timeout="1500"
@@ -48,7 +53,7 @@
       <!-- Script to handle the random selection and pulsing ball -->
       <script>
         // JSON list of animation types
-        const animationTypes = ['stop motion', '3d', 'flickbook', '2d', 'rotoscoping', 'CGI'];
+        const animationTypes = ['Stop Motion', '3D', 'Flickbook', '2D', 'Rotoscoping', 'CGI'];
 
         // Function to get a random animation type
         function getRandomAnimationType() {
